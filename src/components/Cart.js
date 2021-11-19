@@ -1,17 +1,14 @@
-// import { Component } from "react";
-
 const Cart = (props) => {
-  //   const { name, price } = props.item;
-  //   const total = (price += price);
+  const { name, price } = props.cart;
 
-  return (
+  let cart = [];
+
+  return cart.push(
     <div className="added-in-cart">
-      <h4>name of the product</h4>
-      <p>subtotal:</p>
-      <p>tax:</p>
-      <p>total:</p>
-
-      {/* {props.item.name} */}
+      <h4>{name}</h4>
+      <div>subtotal:{price}</div>
+      <div>tax:</div>
+      <div>total:</div>
     </div>
   );
 };

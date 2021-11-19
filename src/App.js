@@ -16,7 +16,7 @@ class App extends Component {
         description: "",
       },
       item: productData,
-      cart: "",
+      cart: [],
     };
   }
   // handleItemClick = (item) => {
@@ -45,7 +45,7 @@ class App extends Component {
 
   render() {
     const { item } = this.state;
-    const product = this.state.item.map((item) => {
+    const product = item.map((item) => {
       return (
         <Items
           key={item.id}
@@ -62,7 +62,7 @@ class App extends Component {
         </div>
         <div>
           <h2>Your Cart</h2>
-          <Cart />
+          <Cart cart={item} />
         </div>
         <div>
           <h2>Checkout Here</h2>
