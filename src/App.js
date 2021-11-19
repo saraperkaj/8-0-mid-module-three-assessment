@@ -2,6 +2,7 @@ import { Component } from "react";
 import "./App.css";
 import Items from "./components/Items";
 import productData from "./data/productData";
+import Cart from "./components/Cart";
 
 class App extends Component {
   constructor() {
@@ -17,11 +18,11 @@ class App extends Component {
       cart: "",
     };
   }
-  handleItemClick = (item) => {
-    this.setState({
-      product: item,
-    });
-  };
+  // handleItemClick = (item) => {
+  //   this.setState({
+  //     product: item,
+  //   });
+  // };
 
   addItem = () => {
     const { cart, item } = this.state;
@@ -29,34 +30,33 @@ class App extends Component {
   };
 
   /**
+   * methods
+   *
    * addItems
    * enterInfo
    * completeTransaction
    *
    * components to make:
    * items
-   *
-   *
+   * cart
+   * Check(out)
    */
 
   render() {
-    const { product, item } = this.state;
-    const that = item.map((item) => {
+    const { item } = this.state;
+    const product = this.state.item.map((item) => {
       return (
         <Items
-          key={item}
-          product={product}
-          handleItemClick={this.handleItemClick}
+          key={item.id}
+          item={item}
+          // handleItemClick={this.handleItemClick}
         />
       );
     });
     return (
       <div className="app" id="app-container">
         <h1>Garage Sale</h1>
-        <Items />
-        {/* <div id="product=list-container">{}</div> */}
-
-        <button onClick={this.addItem}>Add To Cart</button>
+        <div id="product-list-container">{product}</div>
       </div>
     );
   }

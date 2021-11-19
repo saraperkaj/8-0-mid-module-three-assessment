@@ -6,12 +6,13 @@ const Items = (props) => {
   return (
     <div
       className="product-item-container"
-      onClick={() => props.handleItemClick(props.item)}
+      // onClick={() => props.handleItemClick(props.item)}
     >
-      <img className="item-photo" src={img} alt={name} />
       <h1>{name}</h1>
       <div>price: ${price} </div>
+      <img className="item-photo" src={img} alt={name} />
       <div>{description}</div>
+      <button onClick={props.item.addItem}>Add To Cart</button>
     </div>
   );
 };
