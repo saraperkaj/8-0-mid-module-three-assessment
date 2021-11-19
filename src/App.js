@@ -3,6 +3,7 @@ import "./App.css";
 import Items from "./components/Items";
 import productData from "./data/productData";
 import Cart from "./components/Cart";
+import Check from "./components/Check";
 
 class App extends Component {
   constructor() {
@@ -55,8 +56,18 @@ class App extends Component {
     });
     return (
       <div className="app" id="app-container">
-        <h1>Garage Sale</h1>
-        <div id="product-list-container">{product}</div>
+        <div>
+          <h1>Garage Sale</h1>
+          <div id="product-list-container">{product}</div>
+        </div>
+        <div>
+          <h2>Your Cart</h2>
+          <Cart />
+        </div>
+        <div>
+          <h2>Checkout Here</h2>
+          <Check />
+        </div>
       </div>
     );
   }
